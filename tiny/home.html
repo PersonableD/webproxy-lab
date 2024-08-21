@@ -2,19 +2,64 @@
   <head>
     <meta charset="UTF-8" />
     <title>오둥이월드</title>
+    <style>
+      .display-4 {
+        color: transparent;
+        background: black;
+        background-clip: text;
+        -webkit-background-clip: text;
+        transition: background 0.5s ease-in;
+      }
+
+      .display-4 {
+        cursor: pointer;
+
+        background: linear-gradient(
+          to right,
+          #cdfc93,
+          #ff7ecd,
+          #71d7ff,
+          #ce81ff,
+          #fff68b
+        );
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        background-size: 200%;
+        animation: anim 10s linear infinite;
+        -webkit-animation: anim 10s linear infinite;
+      }
+
+      @keyframes anim {
+        0% {
+          background-position: 0% 50%;
+        }
+        100% {
+          background-position: 200% 50%;
+        }
+      }
+    </style>
   </head>
   <body>
-    <h1>날아라 오둥!</h1>
-    <img align="middle" src="odung.gif" />
-    <video src="videoplayback.mp4" autoplay muted loop></video>
-    <h1>CGI Adder</h1>
-    <form action="/cgi-bin/adder" method="GET">
-      <label for="n1">Number 1:</label>
-      <input type="text" name="n1" required /><br /><br />
-
-      <label for="n2">Number 2:</label>
-      <input type="text" name="n2" required /><br /><br />
-      <input type="submit" value="Add Numbers" />
-    </form>
+    <div align="middle">
+      <h1>CGI Adder</h1>
+      <form id="form" method="GET" action="/cgi-bin/adder" target="cgiFrame">
+        <input name="n1" type="text" required size="10" />
+        <input name="n2" type="text" required size="10" />
+        <input type="submit" value="Add Number" />
+      </form>
+      <iframe
+        name="cgiFrame"
+        src="/cgi-bin/adder"
+        width="400"
+        height="100"
+      ></iframe>
+      <hr style="width: 42.5%; margin-top: 50px" />
+      <h1 class="display-4">날아라 오둥!</h1>
+      <img src="odung.gif" />
+      <hr style="width: 42.5%; margin-top: 50px; margin-bottom: 20px" />
+      <h1>Huh Cat</h1>
+      <video src="videoplayback.mp4" autoplay muted loop></video>
+    </div>
   </body>
 </html>

@@ -20,14 +20,14 @@ int main(void) {
     n2 = atoi(arg2);
   }
   sprintf(content, "QUERY_STRING=%s", buf);
-  sprintf(content, "Welcome to add.com: ");
-  strcat(visible, content);
-  sprintf(content, "%sTHE Internet addition portal.\r\n<p>",content);
-  strcat(visible, content);
+  // sprintf(content, "Welcome to add.com: ");
+  // strcat(visible, content);
+  // sprintf(content, "%sTHE Internet addition portal.\r\n<p>",content);
+  // strcat(visible, content);
   sprintf(content, "%sTHE answer is: %d + %d = %d\r\n<p>",content,n1,n2,n1+n2);
   strcat(visible, content);
-  sprintf(content, "%sThanks for visiting!\r\n", content);
-  strcat(visible, content);
+  // sprintf(content, "%sThanks for visiting!\r\n", content);
+  // strcat(visible, content);
 
   printf("Connection: close\r\n");
   printf("Content-length: %d\r\n", (int)strlen(visible));
